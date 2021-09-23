@@ -1,13 +1,15 @@
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
-public class MainUI : MonoBehaviour
+public class UIMain : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private GameObject gameEndPanel;
 
-    private float timer = 5;
+    private float timer = 15;
 
     public void UpdateScore(int score) {
         scoreText.text = "Score: " + score;
@@ -22,6 +24,15 @@ public class MainUI : MonoBehaviour
         }
         else {
             GameManager.Instance.GameEnd();
+            gameEndPanel.SetActive(true);
         }
+    }
+
+    public void OnReplayClicked() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void OnBackClicked() {
+        SceneManager.LoadScene(0);
     }
 }

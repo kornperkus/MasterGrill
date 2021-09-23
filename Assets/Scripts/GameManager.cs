@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // ENCAPSULATION
     public static GameManager Instance { get; private set; }
     [SerializeField] private int totalScore;
 
-    private MainUI mainUI;
+    private UIMain mainUI;
 
     private void Awake() {
         if (Instance == null) {
@@ -16,7 +17,7 @@ public class GameManager : MonoBehaviour
     }
 
     void Start() {
-        mainUI = GetComponent<MainUI>();
+        mainUI = GetComponent<UIMain>();
     }
 
 

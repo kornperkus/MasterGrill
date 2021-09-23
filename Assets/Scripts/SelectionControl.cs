@@ -13,6 +13,7 @@ public class SelectionControl : MonoBehaviour
         }
     }
 
+    // ABSTRACTION
     private void OnMouseClicked() {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;

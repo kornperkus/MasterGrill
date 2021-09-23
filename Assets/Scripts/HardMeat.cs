@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class HardMeat : Meat
 {
+    // POLYMORPHISM
     protected override void CalculateRule() {
         //set cookedTime to 90% off grillTime
         cookedTime = grillTime * 0.9f;
